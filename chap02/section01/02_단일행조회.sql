@@ -8,4 +8,4 @@ POST /department/_search
     }
 }
 
-Get /department/_doc/KW78cZgBWKne6-Tze6yv
+Get /department/_doc/10
