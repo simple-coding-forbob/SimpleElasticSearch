@@ -13,7 +13,7 @@ POST /employee/_search
   "size": 0,
   "aggs": {
     "by_job": {
-      "terms": {"field": "job",},
+      "terms": {"field": "job.keyword"},
       "aggs": {
         "avg_salary": {"avg": {"field": "salary"}}
       }

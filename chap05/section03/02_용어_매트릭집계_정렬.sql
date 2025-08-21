@@ -18,7 +18,7 @@ POST /employee/_search
       "terms": {"field": "dno", "order": { "_key": "asc" }},
       "aggs": {
         "by_job": {
-          "terms": {"field": "job",},
+          "terms": {"field": "job.keyword"},
           "aggs": {
             "sum_salary": {"sum": {"field": "salary"}}
           }
