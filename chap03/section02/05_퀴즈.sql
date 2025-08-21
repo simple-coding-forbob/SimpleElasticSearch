@@ -11,7 +11,7 @@ POST /employee/_search
     "match_all": {}  
   },
   "sort": [
-    {"ename": "asc"}
+    {"ename.keyword": "asc"}
   ]
 }
 
@@ -27,7 +27,7 @@ POST /employee/_search
     "match_all": {}  
   },
   "sort": [
-    {"ename": "desc"  }
+    {"ename.keyword": "desc"  }
   ]
 }
 
@@ -38,6 +38,6 @@ POST /employee/_search
   },
   "sort": [
     {"_score": "desc" },
-    {"ename": "desc"  }
+    {"ename.keyword": "asc"  }
   ]
 }

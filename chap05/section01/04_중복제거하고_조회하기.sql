@@ -6,7 +6,7 @@
 -- 해석) 중복제거하고 세기
 -- SELECT COUNT(DISTINCT JOB) FROM EMPLOYEE;
 -- cardinality: 유일한 값 세기
--- siz: 0 -  검색 결과 문서(hit)는 하나도 가져오지 않는다는 의미입니다.
+-- siz: 0 -  집계에 사용된 검색 문서(hit)는 하나도 가져오지 않는다는 의미입니다.
 POST /employee/_search
 {
   "size": 0,

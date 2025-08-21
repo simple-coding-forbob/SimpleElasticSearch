@@ -1,3 +1,0 @@
--- 퀴즈) SAMPLE_SEQ2 시퀀스를 삭제하세요
--- 사용법) DROP SEQUENCE 시퀀스명;
-DROP SEQUENCE SAMPLE_SEQ2;
