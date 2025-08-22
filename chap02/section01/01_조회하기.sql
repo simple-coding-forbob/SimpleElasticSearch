@@ -1,14 +1,13 @@
--- CTRL + / 주석
--- 예제1) 부서정보 테이블을 전체 조회하세요
--- es 주석 없음
--- 명령어: POST /<index>/_search
+-- 01_조회하기.sql
+-- 복잡한 조회: POST 방식
+-- TODO: 1) 전체조회:
+-- sql : select * from department
+--  _search : 조회 예약어
+--  query - match_all : 전체조회
+-- POST /인덱스명/_search
 -- {
---   "query": {
---     // 여기에 조건(Query DSL)이 들어갑니다.
---   }
+--    "query": {"match_all": {}}
 -- }
--- 기본: 대소문자 구분하지 않습니다.
--- SELECT * FROM DEPARTMENT;
 POST /department/_search
 {
   "query": {
@@ -16,12 +15,16 @@ POST /department/_search
   }
 }
 
--- 예제2) 부서 테이블의 컬럼 중에 DNO, LOC 만 조회하세요
--- 사용법: SELECT 컬럼1,컬럼2,... FROM 테이블명;
--- SELECT DNO,LOC FROM DEPARTMENT;
+-- TODO: 2) 전체조회: 일부 필드(컬럼)만 보기
+--  sql : select dno,dname from department
+--  사용법: -- POST /인덱스명/_search
+--         {
+--             "_source": ["필드명", "필드명2"],
+--             "query": {"match_all": {}}
+--         }
 POST /department/_search
 {
-  "_source": ["dno", "loc"],
+  "_source": ["dno", "dname"], 
   "query": {
     "match_all": {}
   }

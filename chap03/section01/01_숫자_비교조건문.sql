@@ -1,26 +1,41 @@
--- 예제) SALARY 로 1500 이상인 사원 조회하기
--- 사용법) SELECT 컬럼 FROM 테이블
---        WHERE 컬럼 >= 값;
--- 사원: EMPLOYEE
--- 조건 : 비교연산자 사용
--- SQL 비교연산자: 부등호, =(같다), !=, <>(같지않다)
--- SELECT ENAME,SALARY FROM EMPLOYEE
--- WHERE SALARY >= 1500;
-POST /employee/_search
-{
-  "_source": ["ename", "salary"], 
-  "query": {
-    "range": {"salary": {"gte": 1500 }}
-  }
-}
-
--- 예제) SALARY 로 1500 인 사원 조회하기
--- SELECT ENAME,SALARY FROM EMPLOYEE
--- WHERE SALARY = 1500;
+-- 01_숫자_비교조건문.sql
+--  select ename, salary from employee
+--  where salary >= 1500
+-- TODO: 1) 숫자 범위 조건문: query - range
+-- TODO: gte(>=), gt(>), lte(<=), lt(<)
+-- TODO: 사용법: POST /employee/_search
+--              {
+--                 "_source": ["필드", "필드2",...],
+--                 "query": {"range": {"필드3": {"gte": 값}}
+--              }
 POST /employee/_search
 {
   "_source": ["ename", "salary"],
-  "query": { 
-    "term": { "salary": 1500 } 
+  "query": {
+    "range": {
+      "salary": {
+        "gte": 1500
+      }
+    }
+  }
+}
+
+-- TODO: 2) 정확히 일치하는 값 조회: query - term
+--  select ename, salary from employee
+--  where salary = 1500
+-- TODO: 사용법: POST /employee/_search
+--              {
+--                 "_source": ["필드", "필드2",...],
+--                 "query": {"term": {"필드3": {"value": "값"}}
+--              }
+POST /employee/_search
+{
+  "_source": ["ename", "salary"],
+  "query": {
+    "term": {
+      "salary": {
+        "value": "1500"
+      }
+    }
   }
 }
