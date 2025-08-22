@@ -1,4 +1,4 @@
--- 퀴즈) 부서 번호별(DNO), 직위별(JOB) 행 개수를 화면에 표시하세요
+-- 퀴즈) 부서 번호별(DNO), 직위별(JOB) 평균 급여를 화면에 표시하세요
 -- 사원 테이블명:EMPLOYEE
 -- 부서번호     :DNO
 -- 직위         : JOB
@@ -18,7 +18,7 @@ POST /employee/_search
       "terms": {"field": "dno", "order": { "_key": "desc" }},
       "aggs": {
         "by_job": {
-          "terms": {"field": "job",},
+          "terms": {"field": "job.keyword"},
           "aggs": {
             "avg_salary": {"avg": {"field": "salary"}}
           }

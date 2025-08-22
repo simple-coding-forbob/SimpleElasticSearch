@@ -1,21 +1,25 @@
--- 예제) 부서번호 간격을 10씩 가지는 히스토집계를 낸 후 각 구간별로 job 별(용어) 집계를 구하세요
--- "size": 100  // 그룹화할 최대 개수(안 size)
+-- 예제) job별 급여 평균 구하고, 모든 부서 급여 합계의 총합도 구하기
 POST /employee/_search
 {
   "size": 0,
   "aggs": {
-    "hsalary": {
-      "histogram": {
-        "field": "dno",
-        "interval": 10
+    "by_department": {
+      "terms": {
+        "field": "job.keyword"
       },
       "aggs": {
-        "hterm": {
-          "terms": {
-            "field": "job.keyword"
+        "salary_avg": {
+          "avg": {
+            "field": "salary"
           }
         }
+      }
+    },
+    "total_salary_sum": {
+      "sum_bucket": {
+        "buckets_path": "by_department>salary_avg"
       }
     }
   }
 }
+
