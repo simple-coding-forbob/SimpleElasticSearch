@@ -1,4 +1,4 @@
--- dept 첫번째 문서 데이터 수정하기
+-- dept 첫번째 문서 전체 데이터 대체하기
 POST /dept/_search
 {
   "query": {
@@ -9,6 +9,5 @@ POST /dept/_search
 PUT /dept/_doc/VMdck5gB8tkwzUeiqCFj
 {
   "dno": 20,
-  "dname": "개발부2",
-  "loc": "부산"
+  "dname": "개발부2"
 }

@@ -1,4 +1,6 @@
 -- 예제) dept 을 만드세요.
+GET /department/_mappings
+
 PUT /dept
 {
   "mappings": {
@@ -13,9 +15,3 @@ PUT /dept
     }
   }
 }
-
-
-
-
-
-

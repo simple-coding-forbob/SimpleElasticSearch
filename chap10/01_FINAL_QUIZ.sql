@@ -22,7 +22,7 @@ delete /tb_dept2
 
 
 -- 예제) tb_dept 에 데이터를 추가하세요
-POST /tb_dept/_doc
+PUT /tb_dept/_doc/10
 { "dno": 10, "dname": "ACCOUNTING", "loc": "NEW YORK" }
 
 

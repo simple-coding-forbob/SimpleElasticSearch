@@ -1,7 +1,7 @@
 -- 퀴즈) idx-emp 테이블을 만드세요.
 PUT _index_template/idx_ctemplate
 {
-  "index_patterns": ["idx-*"],
+  "index_patterns": ["edx-*"],
   "priority": 11,
   "template": {
     "settings": {
@@ -21,7 +21,7 @@ PUT _index_template/idx_ctemplate
   }
 }
 
-PUT /idx-emp
+PUT /edx-emp
 {
   "mappings": {
     "properties": {
@@ -34,4 +34,4 @@ PUT /idx-emp
   }    
 }
 
-GET /idx-emp/_mapping
+GET /edx-emp/_mapping
