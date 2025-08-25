@@ -1,3 +1,6 @@
+DELETE /search-all
+DELETE /lookup-all
+
 PUT /search-all
 {
   "mappings": {
@@ -26,7 +29,16 @@ PUT /search-all
             }
           }
         },
-        "name": {
+        "dname": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "ename": {
           "type": "text",
           "fields": {
             "keyword": {
@@ -45,7 +57,7 @@ PUT /search-all
     }
 }
 
-PUT /quiz-all
+PUT /lookup-all
 {
   "mappings": {
       "properties": {
@@ -73,7 +85,7 @@ PUT /quiz-all
             }
           }
         },
-        "name": {
+        "question": {
           "type": "text",
           "fields": {
             "keyword": {
@@ -82,14 +94,17 @@ PUT /quiz-all
             }
           }
         },
-        "question": {
-          "type": "keyword",
-          "ignore_above": 256
-        },
-        ,
         "answer": {
-          "type": "keyword",
-          "ignore_above": 256
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "type": {
+          "type": "keyword"
         },
         "updateTime": {
           "type": "date"
