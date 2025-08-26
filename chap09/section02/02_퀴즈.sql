@@ -1,4 +1,4 @@
--- 퀴즈) EMP 테이블에 데이터를 추가하세요
+-- 퀴즈) EMP 에 여러개 데이터를 추가하세요
 POST /emp/_bulk
 { "index": { } }
 { "eno": 8001, "ename": "ALLEN", "job": "SALESMAN", "manager": 7698, "hiredate": "1981-02-20", "salary": 1600, "commission": 300, "dno": 30, "insert_time": "2025-07-30", "update_time": null }

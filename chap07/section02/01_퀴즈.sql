@@ -1,4 +1,4 @@
--- 퀴즈) ALLEN 사원보다 급여를(SALARY) 작게 받는 사원이 누구인지 표시하세요
+-- 퀴즈) ALLEN 사원보다 급여를(SALARY) 많이 받는 사원이 누구인지 표시하세요
 -- 사원 테이블명: EMPLOYEE
 -- 월급        : SALARY
 -- 사원명      : ENAME

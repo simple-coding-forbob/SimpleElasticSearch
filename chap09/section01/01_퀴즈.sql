@@ -1,4 +1,6 @@
 -- 퀴즈) emp 테이블을 만드세요.
+GET /employee/_mappings
+
 PUT /emp
 {
   "mappings": {

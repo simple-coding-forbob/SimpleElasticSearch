@@ -2,6 +2,8 @@
 -- from(오프셋,현재페이지번호+등차값,0), size(1페이지에 보일개수, 등차값, 2)
 POST /department/_search
 {
+  "from": 0,
+  "size": 3,
   "query": {
     "bool": {
       "must_not": {
