@@ -23,7 +23,7 @@ POST /employee/_search
 
 
 
--- 사원번호가(ENO) 7788 인 사원의 이름과(ENAME) 
+-- 사원번호가(ENO) 8000 인 사원의 이름과(ENAME) 
 --부서번호를(DNO) 표시하세요
 -- 사원 테이블명: EMPLOYEE
 -- 사원번호     : ENO
@@ -34,7 +34,7 @@ POST /employee/_search
 --        ORDER BY 컬럼 ASC[DESC];
 -- 조건         : 사원번호가(ENO) 7788 인
 -- SELECT ENAME,DNO FROM EMPLOYEE
--- WHERE  ENO = 7788;
+-- WHERE  ENO = 8000;
 POST /employee/_search
 {
   "_source": ["ename", "dno"],  
